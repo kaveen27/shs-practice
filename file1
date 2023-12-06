@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Function to calculate factorial
+factorial() {
+  if [ $1 -eq 0 ] || [ $1 -eq 1 ]; then
+    echo 1
+  else
+    echo $(( $1 * $(factorial $(( $1 - 1 ))) ))
+  fi
+}
+
+# Input from the user
+echo "Enter a number:"
+read num
+
+# Calculate factorial and display the result
+result=$(factorial $num)
+echo "Factorial of $num is $result"
+`
